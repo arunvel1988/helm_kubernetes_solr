@@ -1,0 +1,14 @@
+Master:
+  Name: master
+  Image: "arunvel1988/alpine_solr"
+  ImageTag: "latest"
+  Replicas: 1
+  Component: "spark-master"
+  Cpu: "100m"
+  Memory: "512Mi"
+  ServicePort: 30007
+  ContainerPort: 8983
+  # Set Master JVM memory. Default 1g
+  # DaemonMemory: 1g
+  ServiceType: NodePort
+
