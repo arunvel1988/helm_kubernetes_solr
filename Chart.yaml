@@ -1,15 +1,15 @@
 apiVersion: v1
-name: spark
+name: solr
 version: 1.0.3
 appVersion: latest
 description: Fast and general-purpose cluster computing system.
-home: http://spark.apache.org
-icon: http://spark.apache.org/images/spark-logo-trademark.png
+home: http://localhost
+icon: http://localhost
 sources:
-  - https://github.com/kubernetes/kubernetes/tree/master/examples/spark
-  - https://github.com/apache/spark
+  - https://git repo
+  - https://git repo
 maintainers:
-  - name: lachie83
-    email: lachlan.evenson@gmail.com
-  - name: daixiang0
-    email: 764524258@qq.co
+  - name: arun1
+    email: arun1@example.com
+  - name: arun2
+    email: arun2@example.com

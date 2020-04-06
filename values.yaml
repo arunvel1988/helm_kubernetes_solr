@@ -3,10 +3,10 @@ Master:
   Image: "arunvel1988/alpine_solr"
   ImageTag: "latest"
   Replicas: 1
-  Component: "spark-master"
+  Component: "solr-master"
   Cpu: "100m"
   Memory: "512Mi"
-  ServicePort: 30007
+  ServicePort: 30008
   ContainerPort: 8983
   # Set Master JVM memory. Default 1g
   # DaemonMemory: 1g

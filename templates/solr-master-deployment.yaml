@@ -10,7 +10,7 @@ metadata:
     component: "{{ .Release.Name }}-{{ .Values.Master.Component }}"
 spec:
   ports:
-    - nodePort: 30007
+    - nodePort: 30008
       port: 8983
   selector:
     component: "{{ .Release.Name }}-{{ .Values.Master.Component }}"
