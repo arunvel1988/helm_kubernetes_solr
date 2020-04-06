@@ -25,4 +25,8 @@ Worker:
   # Set Master JVM memory. Default 1g
   # DaemonMemory: 1g
   ServiceType: NodePort
+  Autoscaling:
+    Enabled: true
+  ReplicasMax: 10
+  CpuTargetPercentage: 50
 
