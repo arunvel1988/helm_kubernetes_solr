@@ -42,10 +42,22 @@ spec:
     spec:
       containers:
         - name: {{ template "worker-fullname" . }}
-          image: "{{ .Values.Worker.Image }}:{{ .Values.Worker.ImageTag }}"    
+          image: "{{ .Values.Worker.Image }}:{{ .Values.Worker.ImageTag }}"
+          env:
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mysecret
+                  key: username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysecret
+                  key: password      
           volumeMounts:
             - mountPath: "/tmp"
-              name: task-pv-solr    
+              name: task-pv-solr
+              
           ports:
             - containerPort: {{ .Values.Worker.ContainerPort }}
           resources:
