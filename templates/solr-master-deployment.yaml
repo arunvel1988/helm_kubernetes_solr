@@ -49,7 +49,10 @@ spec:
           volumeMounts:
             - name: foo
               mountPath: "/etc/foo"
-              readOnly: true     
+              readOnly: true 
+          volumeMounts:      
+            - name: configmap-volume
+              mountPath: /etc/config          	    
           ports:
             - containerPort: {{ .Values.Master.ContainerPort }}
           resources:
@@ -65,3 +68,7 @@ spec:
           secret:
             secretName: mysecret
 
+      volumes:    
+        - name: configmap-volume     
+          configMap:         
+            name: db-configmap 
