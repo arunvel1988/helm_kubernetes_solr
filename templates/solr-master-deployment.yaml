@@ -45,7 +45,11 @@ spec:
           image: "{{ .Values.Master.Image }}:{{ .Values.Master.ImageTag }}"    
           volumeMounts:
             - mountPath: "/tmp/data"
-              name: task-pv-solr     
+              name: task-pv-solr
+          volumeMounts:
+            - name: foo
+              mountPath: "/etc/foo"
+              readOnly: true     
           ports:
             - containerPort: {{ .Values.Master.ContainerPort }}
           resources:
@@ -56,5 +60,8 @@ spec:
         - name: task-pv-solr
           persistentVolumeClaim:
             claimName: data-pvc 
-
+      volumes:
+        - name: foo
+          secret:
+            secretName: mysecret
 
